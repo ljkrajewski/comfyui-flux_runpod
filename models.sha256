@@ -1,4 +1,4 @@
-1be961341be8f5307ef26c787199f80bf4e0de3c1c0b4617095aa6ee5550dfce  ./models/checkpoints/flux1-dev-fp8.safetensors
+8e91b68084b53a7fc44ed2a3756d821e355ac1a7b6fe29be760c1db532f3d88a  ./models/checkpoints/flux1-dev-fp8.safetensors
 7d330da4816157540d6bb7838bf63a0f02f573fc48ca4d8de34bb0cbfd514f09  ./models/clip/t5xxl_fp8_e4m3fn.safetensors
 660c6f5b1abae9dc498ac2d21e1347d2abdb0cf6c0c0c8576cd796491d9a6cdd  ./models/clip/clip_l.safetensors
 afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38  ./models/vae/ae.safetensors
