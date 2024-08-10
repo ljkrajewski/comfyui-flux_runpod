@@ -23,9 +23,9 @@ RUN git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 
 EXPOSE $LISTENPORT
 EXPOSE 22
-EXPOSE 3000
-EXPOSE 7860
-EXPOSE 8000
+#EXPOSE 3000
+#EXPOSE 7860
+#EXPOSE 8000
 EXPOSE 8888
 # Remember to use the '-p 80:8818' or '-P' flag with your 'docker run' command.
 #CMD ["python", "main.py", "--listen", "--port 8818"]
