@@ -1,98 +1,29 @@
 export const defaultGraph =  {
-  "last_node_id": 37,
-  "last_link_id": 116,
+  "last_node_id": 36,
+  "last_link_id": 57,
   "nodes": [
     {
-      "id": 17,
-      "type": "BasicScheduler",
+      "id": 33,
+      "type": "CLIPTextEncode",
       "pos": [
-        480,
-        1008
+        390,
+        400
       ],
       "size": {
-        "0": 315,
-        "1": 106
+        "0": 422.84503173828125,
+        "1": 164.31304931640625
       },
-      "flags": {},
-      "order": 13,
+      "flags": {
+        "collapsed": true
+      },
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
-          "name": "model",
-          "type": "MODEL",
-          "link": 55,
+          "name": "clip",
+          "type": "CLIP",
+          "link": 54,
           "slot_index": 0
-        }
-      ],
-      "outputs": [
-        {
-          "name": "SIGMAS",
-          "type": "SIGMAS",
-          "links": [
-            20
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "BasicScheduler"
-      },
-      "widgets_values": [
-        "simple",
-        20,
-        1
-      ]
-    },
-    {
-      "id": 16,
-      "type": "KSamplerSelect",
-      "pos": [
-        480,
-        912
-      ],
-      "size": {
-        "0": 315,
-        "1": 58
-      },
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "SAMPLER",
-          "type": "SAMPLER",
-          "links": [
-            19
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "KSamplerSelect"
-      },
-      "widgets_values": [
-        "euler"
-      ]
-    },
-    {
-      "id": 26,
-      "type": "FluxGuidance",
-      "pos": [
-        480,
-        144
-      ],
-      "size": {
-        "0": 317.4000244140625,
-        "1": 58
-      },
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "conditioning",
-          "type": "CONDITIONING",
-          "link": 41
         }
       ],
       "outputs": [
@@ -100,7 +31,84 @@ export const defaultGraph =  {
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": [
-            42
+            55
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "CLIP Text Encode (Negative Prompt)",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 27,
+      "type": "EmptySD3LatentImage",
+      "pos": [
+        471,
+        455
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            51
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptySD3LatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 35,
+      "type": "FluxGuidance",
+      "pos": [
+        576,
+        96
+      ],
+      "size": {
+        "0": 211.60000610351562,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 56
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            57
           ],
           "shape": 3,
           "slot_index": 0
@@ -111,178 +119,32 @@ export const defaultGraph =  {
       },
       "widgets_values": [
         3.5
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 22,
-      "type": "BasicGuider",
-      "pos": [
-        576,
-        48
-      ],
-      "size": {
-        "0": 222.3482666015625,
-        "1": 46
-      },
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 54,
-          "slot_index": 0
-        },
-        {
-          "name": "conditioning",
-          "type": "CONDITIONING",
-          "link": 42,
-          "slot_index": 1
-        }
-      ],
-      "outputs": [
-        {
-          "name": "GUIDER",
-          "type": "GUIDER",
-          "links": [
-            30
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "BasicGuider"
-      }
-    },
-    {
-      "id": 13,
-      "type": "SamplerCustomAdvanced",
-      "pos": [
-        864,
-        192
-      ],
-      "size": {
-        "0": 272.3617858886719,
-        "1": 124.53733825683594
-      },
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "noise",
-          "type": "NOISE",
-          "link": 37,
-          "slot_index": 0
-        },
-        {
-          "name": "guider",
-          "type": "GUIDER",
-          "link": 30,
-          "slot_index": 1
-        },
-        {
-          "name": "sampler",
-          "type": "SAMPLER",
-          "link": 19,
-          "slot_index": 2
-        },
-        {
-          "name": "sigmas",
-          "type": "SIGMAS",
-          "link": 20,
-          "slot_index": 3
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 116,
-          "slot_index": 4
-        }
-      ],
-      "outputs": [
-        {
-          "name": "output",
-          "type": "LATENT",
-          "links": [
-            24
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "denoised_output",
-          "type": "LATENT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "SamplerCustomAdvanced"
-      }
-    },
-    {
-      "id": 25,
-      "type": "RandomNoise",
-      "pos": [
-        480,
-        768
-      ],
-      "size": {
-        "0": 315,
-        "1": 82
-      },
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "NOISE",
-          "type": "NOISE",
-          "links": [
-            37
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "RandomNoise"
-      },
-      "widgets_values": [
-        253267605526399,
-        "randomize"
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
+      ]
     },
     {
       "id": 8,
       "type": "VAEDecode",
       "pos": [
-        866,
-        367
+        1151,
+        195
       ],
       "size": {
         "0": 210,
         "1": 46
       },
       "flags": {},
-      "order": 16,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
           "name": "samples",
           "type": "LATENT",
-          "link": 24
+          "link": 52
         },
         {
           "name": "vae",
           "type": "VAE",
-          "link": 12
+          "link": 46
         }
       ],
       "outputs": [
@@ -300,132 +162,41 @@ export const defaultGraph =  {
       }
     },
     {
-      "id": 30,
-      "type": "ModelSamplingFlux",
+      "id": 34,
+      "type": "Note",
       "pos": [
-        480,
-        1152
+        831,
+        501
       ],
       "size": {
-        "0": 315,
-        "1": 130
+        "0": 282.8617858886719,
+        "1": 164.08004760742188
       },
       "flags": {},
-      "order": 11,
+      "order": 1,
       "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 56,
-          "slot_index": 0
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 115,
-          "widget": {
-            "name": "width"
-          },
-          "slot_index": 1
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 114,
-          "widget": {
-            "name": "height"
-          },
-          "slot_index": 2
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            54,
-            55
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
       "properties": {
-        "Node name for S&R": "ModelSamplingFlux"
+        "text": ""
       },
       "widgets_values": [
-        1.15,
-        0.5,
-        720,
-        1440
-      ]
-    },
-    {
-      "id": 27,
-      "type": "EmptySD3LatentImage",
-      "pos": [
-        480,
-        624
+        "Note that Flux dev and schnell do not have any negative prompt so CFG should be set to 1.0. Setting CFG to 1.0 means the negative prompt is ignored."
       ],
-      "size": {
-        "0": 315,
-        "1": 106
-      },
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 112,
-          "widget": {
-            "name": "width"
-          }
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 113,
-          "widget": {
-            "name": "height"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            116
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "EmptySD3LatentImage"
-      },
-      "widgets_values": [
-        720,
-        1440,
-        1
-      ]
+      "color": "#432",
+      "bgcolor": "#653"
     },
     {
       "id": 9,
       "type": "SaveImage",
       "pos": [
-        1155,
-        196
+        1375,
+        194
       ],
       "size": {
         "0": 985.3012084960938,
         "1": 1060.3828125
       },
       "flags": {},
-      "order": 17,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -440,171 +211,24 @@ export const defaultGraph =  {
       ]
     },
     {
-      "id": 37,
-      "type": "Note",
-      "pos": [
-        480,
-        1344
-      ],
-      "size": {
-        "0": 314.99755859375,
-        "1": 117.98363494873047
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "The reference sampling implementation auto adjusts the shift value based on the resolution, if you don't want this you can just bypass (CTRL-B) this ModelSamplingFlux node.\n"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 28,
-      "type": "Note",
-      "pos": [
-        48,
-        576
-      ],
-      "size": {
-        "0": 336,
-        "1": 288
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "properties": {
-        "text": ""
-      },
-      "widgets_values": [
-        "If you get an error in any of the nodes above make sure the files are in the correct directories.\n\nSee the top of the examples page for the links : https://comfyanonymous.github.io/ComfyUI_examples/flux/\n\nflux1-dev.safetensors goes in: ComfyUI/models/unet/\n\nt5xxl_fp16.safetensors and clip_l.safetensors go in: ComfyUI/models/clip/\n\nae.safetensors goes in: ComfyUI/models/vae/\n\n\nTip: You can set the weight_dtype above to one of the fp8 types if you have memory issues."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 11,
-      "type": "DualCLIPLoader",
-      "pos": [
-        48,
-        288
-      ],
-      "size": {
-        "0": 315,
-        "1": 106
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            10
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "DualCLIPLoader"
-      },
-      "widgets_values": [
-        "t5xxl_fp8_e4m3fn.safetensors",
-        "clip_l.safetensors",
-        "flux"
-      ]
-    },
-    {
-      "id": 10,
-      "type": "VAELoader",
-      "pos": [
-        48,
-        432
-      ],
-      "size": {
-        "0": 311.81634521484375,
-        "1": 60.429901123046875
-      },
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            12
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VAELoader"
-      },
-      "widgets_values": [
-        "ae.safetensors"
-      ]
-    },
-    {
-      "id": 12,
-      "type": "UNETLoader",
-      "pos": [
-        48,
-        144
-      ],
-      "size": {
-        "0": 315,
-        "1": 82
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            56
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "UNETLoader"
-      },
-      "widgets_values": [
-        "flux1-dev-fp8.safetensors",
-        "fp8_e4m3fn"
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
       "id": 6,
       "type": "CLIPTextEncode",
       "pos": [
         384,
-        240
+        192
       ],
       "size": {
         "0": 422.84503173828125,
         "1": 164.31304931640625
       },
       "flags": {},
-      "order": 9,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 10
+          "link": 45
         }
       ],
       "outputs": [
@@ -612,7 +236,7 @@ export const defaultGraph =  {
           "name": "CONDITIONING",
           "type": "CONDITIONING",
           "links": [
-            41
+            56
           ],
           "slot_index": 0
         }
@@ -622,88 +246,121 @@ export const defaultGraph =  {
         "Node name for S&R": "CLIPTextEncode"
       },
       "widgets_values": [
-        "a cute puppy playing in a forest"
+        "cute anime girl with massive fluffy fennec ears and a big fluffy tail blonde messy long hair blue eyes wearing a maid outfit with a long black gold leaf pattern dress and a white apron mouth open placing a fancy black forest cake with candles on top of a dinner table of an old dark Victorian mansion lit by candlelight with a bright window to the foggy forest and very expensive stuff everywhere there are paintings on the walls"
       ],
       "color": "#232",
       "bgcolor": "#353"
     },
     {
-      "id": 35,
-      "type": "PrimitiveNode",
+      "id": 31,
+      "type": "KSampler",
       "pos": [
-        672,
-        480
+        816,
+        192
       ],
       "size": {
-        "0": 210,
-        "1": 82
+        "0": 315,
+        "1": 262
       },
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 47
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 57
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 55
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 51
+        }
+      ],
       "outputs": [
         {
-          "name": "INT",
-          "type": "INT",
+          "name": "LATENT",
+          "type": "LATENT",
           "links": [
-            113,
-            114
+            52
           ],
-          "widget": {
-            "name": "height"
-          },
+          "shape": 3,
           "slot_index": 0
         }
       ],
-      "title": "height",
       "properties": {
-        "Run widget replace on values": false
+        "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        1440,
-        "fixed"
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
+        972054013131368,
+        "randomize",
+        20,
+        1,
+        "euler",
+        "simple",
+        1
+      ]
     },
     {
-      "id": 34,
-      "type": "PrimitiveNode",
+      "id": 30,
+      "type": "CheckpointLoaderSimple",
       "pos": [
-        432,
-        480
+        48,
+        192
       ],
       "size": {
-        "0": 210,
-        "1": 82
+        "0": 315,
+        "1": 98
       },
       "flags": {},
-      "order": 8,
+      "order": 2,
       "mode": 0,
       "outputs": [
         {
-          "name": "INT",
-          "type": "INT",
+          "name": "MODEL",
+          "type": "MODEL",
           "links": [
-            112,
-            115
+            47
           ],
-          "slot_index": 0,
-          "widget": {
-            "name": "width"
-          }
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            45,
+            54
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            46
+          ],
+          "shape": 3,
+          "slot_index": 2
         }
       ],
-      "title": "width",
       "properties": {
-        "Run widget replace on values": false
+        "Node name for S&R": "CheckpointLoaderSimple"
       },
       "widgets_values": [
-        720,
-        "fixed"
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
+        "flux1-dev-fp8.safetensors"
+      ]
     }
   ],
   "links": [
@@ -716,153 +373,88 @@ export const defaultGraph =  {
       "IMAGE"
     ],
     [
-      10,
-      11,
-      0,
+      45,
+      30,
+      1,
       6,
       0,
       "CLIP"
     ],
     [
-      12,
-      10,
-      0,
+      46,
+      30,
+      2,
       8,
       1,
       "VAE"
     ],
     [
-      19,
-      16,
+      47,
+      30,
       0,
-      13,
-      2,
-      "SAMPLER"
+      31,
+      0,
+      "MODEL"
     ],
     [
-      20,
-      17,
+      51,
+      27,
       0,
-      13,
+      31,
       3,
-      "SIGMAS"
+      "LATENT"
     ],
     [
-      24,
-      13,
+      52,
+      31,
       0,
       8,
       0,
       "LATENT"
     ],
     [
-      30,
-      22,
-      0,
-      13,
-      1,
-      "GUIDER"
-    ],
-    [
-      37,
-      25,
-      0,
-      13,
-      0,
-      "NOISE"
-    ],
-    [
-      41,
-      6,
-      0,
-      26,
-      0,
-      "CONDITIONING"
-    ],
-    [
-      42,
-      26,
-      0,
-      22,
-      1,
-      "CONDITIONING"
-    ],
-    [
       54,
       30,
+      1,
+      33,
       0,
-      22,
-      0,
-      "MODEL"
+      "CLIP"
     ],
     [
       55,
-      30,
+      33,
       0,
-      17,
-      0,
-      "MODEL"
+      31,
+      2,
+      "CONDITIONING"
     ],
     [
       56,
-      12,
+      6,
       0,
-      30,
-      0,
-      "MODEL"
-    ],
-    [
-      112,
-      34,
-      0,
-      27,
-      0,
-      "INT"
-    ],
-    [
-      113,
       35,
       0,
-      27,
-      1,
-      "INT"
+      "CONDITIONING"
     ],
     [
-      114,
+      57,
       35,
       0,
-      30,
-      2,
-      "INT"
-    ],
-    [
-      115,
-      34,
-      0,
-      30,
+      31,
       1,
-      "INT"
-    ],
-    [
-      116,
-      27,
-      0,
-      13,
-      4,
-      "LATENT"
+      "CONDITIONING"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1,
+      "scale": 1.1000000000000005,
       "offset": [
-        307.0024427693272,
-        -113.16545033947921
+        -23.861787133001968,
+        -1.724683247067936
       ]
-    },
-    "groupNodes": {}
+    }
   },
   "version": 0.4
 }
