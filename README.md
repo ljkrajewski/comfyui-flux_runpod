@@ -9,7 +9,7 @@ ComfyUI with Flux model to run on Runpod.io
 | defaultGraph.js | The default workflow. To make a new one, save your current workflow, then change the first line to ```export const defaultGraph = {``` |
 | dl_flux_model.sh | Bash shell to download files for the Flux model. Didn't want to download the models everytime I built an image (they're huge, and my internet is _meh_), so I use this to download the files once then copy them when the image is built. |
 | models.sha256 | sha256 sums of the models to make sure they weren't corrupted during the download. (Did I mention my internet is _meh_.) |
-| post_start.sh | Used my Runpod.io as part of a container's startup. |
+| post_start.sh | Used by Runpod.io as part of a container's startup. |
 
 ## Support
 There isn't any.
