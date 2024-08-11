@@ -3,6 +3,7 @@ FROM runpod/pytorch:2.1.1-py3.10-cuda12.1.1-devel-ubuntu22.04
 ENV BASEDIR=/usr/local/src
 ENV COMFYDIR=$BASEDIR/ComfyUI
 ENV LISTENPORT=8818
+ENV PIP_ROOT_USER_ACTION=ignore
 
 # Update image, install tools, & download ComfyUI from Github
 WORKDIR $BASEDIR
