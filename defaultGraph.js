@@ -1,6 +1,6 @@
 export const defaultGraph =  {
-  "last_node_id": 36,
-  "last_link_id": 57,
+  "last_node_id": 37,
+  "last_link_id": 64,
   "nodes": [
     {
       "id": 33,
@@ -16,13 +16,13 @@ export const defaultGraph =  {
       "flags": {
         "collapsed": true
       },
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 54,
+          "link": 62,
           "slot_index": 0
         }
       ],
@@ -122,46 +122,6 @@ export const defaultGraph =  {
       ]
     },
     {
-      "id": 8,
-      "type": "VAEDecode",
-      "pos": [
-        1151,
-        195
-      ],
-      "size": {
-        "0": 210,
-        "1": 46
-      },
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "samples",
-          "type": "LATENT",
-          "link": 52
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 46
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            9
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VAEDecode"
-      }
-    },
-    {
       "id": 34,
       "type": "Note",
       "pos": [
@@ -211,52 +171,11 @@ export const defaultGraph =  {
       ]
     },
     {
-      "id": 6,
-      "type": "CLIPTextEncode",
-      "pos": [
-        384,
-        192
-      ],
-      "size": {
-        "0": 422.84503173828125,
-        "1": 164.31304931640625
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 45
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            56
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "CLIP Text Encode (Positive Prompt)",
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "cute anime girl with massive fluffy fennec ears and a big fluffy tail blonde messy long hair blue eyes wearing a maid outfit with a long black gold leaf pattern dress and a white apron mouth open placing a fancy black forest cake with candles on top of a dinner table of an old dark Victorian mansion lit by candlelight with a bright window to the foggy forest and very expensive stuff everywhere there are paintings on the walls"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 31,
       "type": "KSampler",
       "pos": [
-        816,
-        192
+        872,
+        143
       ],
       "size": {
         "0": 315,
@@ -269,7 +188,7 @@ export const defaultGraph =  {
         {
           "name": "model",
           "type": "MODEL",
-          "link": 47
+          "link": 58
         },
         {
           "name": "positive",
@@ -302,7 +221,7 @@ export const defaultGraph =  {
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        972054013131368,
+        488697609851486,
         "randomize",
         20,
         1,
@@ -312,11 +231,92 @@ export const defaultGraph =  {
       ]
     },
     {
-      "id": 30,
-      "type": "CheckpointLoaderSimple",
+      "id": 6,
+      "type": "CLIPTextEncode",
       "pos": [
-        48,
+        384,
         192
+      ],
+      "size": {
+        "0": 422.84503173828125,
+        "1": 164.31304931640625
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 63
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            56
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "cute anime girl with massive fluffy fennec ears and a big fluffy tail blonde messy long hair blue eyes wearing a maid outfit with a long black gold leaf pattern dress and a white apron mouth open placing a fancy black forest cake with candles on top of a dinner table of an old dark Victorian mansion lit by candlelight with a bright window to the foggy forest and very expensive stuff everywhere there are paintings on the walls"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1257,
+        41
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 52
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 64
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 37,
+      "type": "CheckpointLoaderNF4",
+      "pos": [
+        35,
+        43
       ],
       "size": {
         "0": 315,
@@ -330,7 +330,7 @@ export const defaultGraph =  {
           "name": "MODEL",
           "type": "MODEL",
           "links": [
-            47
+            58
           ],
           "shape": 3,
           "slot_index": 0
@@ -339,8 +339,8 @@ export const defaultGraph =  {
           "name": "CLIP",
           "type": "CLIP",
           "links": [
-            45,
-            54
+            62,
+            63
           ],
           "shape": 3,
           "slot_index": 1
@@ -349,17 +349,17 @@ export const defaultGraph =  {
           "name": "VAE",
           "type": "VAE",
           "links": [
-            46
+            64
           ],
           "shape": 3,
           "slot_index": 2
         }
       ],
       "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
+        "Node name for S&R": "CheckpointLoaderNF4"
       },
       "widgets_values": [
-        "flux1-dev-fp8.safetensors"
+        "flux1-dev-bnb-nf4-v2.safetensors"
       ]
     }
   ],
@@ -371,30 +371,6 @@ export const defaultGraph =  {
       9,
       0,
       "IMAGE"
-    ],
-    [
-      45,
-      30,
-      1,
-      6,
-      0,
-      "CLIP"
-    ],
-    [
-      46,
-      30,
-      2,
-      8,
-      1,
-      "VAE"
-    ],
-    [
-      47,
-      30,
-      0,
-      31,
-      0,
-      "MODEL"
     ],
     [
       51,
@@ -411,14 +387,6 @@ export const defaultGraph =  {
       8,
       0,
       "LATENT"
-    ],
-    [
-      54,
-      30,
-      1,
-      33,
-      0,
-      "CLIP"
     ],
     [
       55,
@@ -443,16 +411,48 @@ export const defaultGraph =  {
       31,
       1,
       "CONDITIONING"
+    ],
+    [
+      58,
+      37,
+      0,
+      31,
+      0,
+      "MODEL"
+    ],
+    [
+      62,
+      37,
+      1,
+      33,
+      0,
+      "CLIP"
+    ],
+    [
+      63,
+      37,
+      1,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      64,
+      37,
+      2,
+      8,
+      1,
+      "VAE"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.1000000000000005,
+      "scale": 0.7513148009015777,
       "offset": [
-        -23.861787133001968,
-        -1.724683247067936
+        67.9705388706342,
+        282.00797184392417
       ]
     }
   },
