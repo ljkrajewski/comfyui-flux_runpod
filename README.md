@@ -23,6 +23,6 @@ Okay, that was rude of me, but to be completely candid I built this for me to fi
 ## Changelog
 | Date | Tag | Description |
 | --- | --- | --- |
-| ??? | v 1.2-dev | Cleaned up unused ports in Dockerfile. Changed checkpoint model to _flux1-dev-bnb-nf4-v2_. |
+| ??? | v 1.2-dev | Cleaned up unused ports in Dockerfile. Changed checkpoint model to _flux1-dev-bnb-nf4-v2_. Added *ComfyUI_bitsandbytes_NF4* control node. |
 | 2024.08.10 | v1.1 | Changed default workflow to ["flux_dev_checkpoint_example"](https://raw.githubusercontent.com/comfyanonymous/ComfyUI_examples/master/flux/flux_dev_checkpoint_example.png). Moved flux1-dev-fp8.safetensors from _unet_ to _checkpoints_. Replaced flux1-dev-fp8.safetensors with [model from Comfy-Org](https://huggingface.co/Comfy-Org/flux1-dev/blob/main/flux1-dev-fp8.safetensors). Added "To-do" section to README.md |
 | 2024.08.09 | v1 | Initial build with flux1-dev-fp8 model. |
