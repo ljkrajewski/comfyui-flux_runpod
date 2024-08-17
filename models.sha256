@@ -1,4 +1,4 @@
 fef37763b8f2c8cc3463139bbb6d91aa517c605b654d4e5c540de52813f30306  ./models/checkpoints/flux1-dev-bnb-nf4-v2.safetensors
-7d330da4816157540d6bb7838bf63a0f02f573fc48ca4d8de34bb0cbfd514f09  ./models/clip/t5xxl_fp8_e4m3fn.safetensors
-660c6f5b1abae9dc498ac2d21e1347d2abdb0cf6c0c0c8576cd796491d9a6cdd  ./models/clip/clip_l.safetensors
-afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38  ./models/vae/ae.safetensors
+#7d330da4816157540d6bb7838bf63a0f02f573fc48ca4d8de34bb0cbfd514f09  ./models/clip/t5xxl_fp8_e4m3fn.safetensors
+#660c6f5b1abae9dc498ac2d21e1347d2abdb0cf6c0c0c8576cd796491d9a6cdd  ./models/clip/clip_l.safetensors
+#afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38  ./models/vae/ae.safetensors
