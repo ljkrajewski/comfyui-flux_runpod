@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#BASEDIR="/usr/local/src"
-#COMFYDIR="$BASEDIR/ComfyUI"
+#COMFYDIR & LISTENPORT are set in Dockerfile 
 
 cd $COMFYDIR
 python main.py --listen --port $LISTENPORT &
