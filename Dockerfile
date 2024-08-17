@@ -18,7 +18,8 @@ WORKDIR $COMFYDIR
 COPY models/ models
 COPY defaultGraph.js web/scripts/
 COPY --chmod=755 post_start.sh /
- 
+
+# Install custom nodes
 WORKDIR $COMFYDIR/custom_nodes 
 RUN git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
     git clone https://github.com/comfyanonymous/ComfyUI_bitsandbytes_NF4.git && \
