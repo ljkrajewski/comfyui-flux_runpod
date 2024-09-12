@@ -22,6 +22,7 @@ COPY --chmod=755 post_start.sh /
 # Install custom nodes
 WORKDIR $COMFYDIR/custom_nodes 
 RUN git clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
+    git clone git clone https://github.com/heshengtao/comfyui_LLM_party.git && \
     git clone https://github.com/comfyanonymous/ComfyUI_bitsandbytes_NF4.git && \
     pip install -r ComfyUI_bitsandbytes_NF4/requirements.txt
 
