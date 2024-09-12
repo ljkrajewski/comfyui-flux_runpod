@@ -19,7 +19,7 @@ Okay, that was rude of me, but to be completely candid I built this for me to fi
 ## To-do
 - Add [img2img support](https://www.youtube.com/watch?v=4d5zIBNuMRA) (or [Florence 2](https://www.youtube.com/watch?v=1JtFK73K2sE))
 - Add [inpainting](https://www.youtube.com/watch?v=Qiltbxvhr_A)
-- ~~Add LLM prompt enhancement.~~ Create workflow to use [LLM prompt enhancement](https://www.youtube.com/watch?v=4d5zIBNuMRA).
+- ~~Add LLM prompt enhancement.~~ Add ollama to the image. Create workflow to use [LLM prompt enhancement](https://www.youtube.com/watch?v=4d5zIBNuMRA).
 
 ## Changelog
 | Date | Tag | Description |
