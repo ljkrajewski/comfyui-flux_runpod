@@ -19,11 +19,11 @@ Okay, that was rude of me, but to be completely candid I built this for me to fi
 ## To-do
 - Add [img2img support](https://www.youtube.com/watch?v=4d5zIBNuMRA) (or [Florence 2](https://www.youtube.com/watch?v=1JtFK73K2sE))
 - Add [inpainting](https://www.youtube.com/watch?v=Qiltbxvhr_A)
-- Add [LLM prompt enhancement](https://www.youtube.com/watch?v=4d5zIBNuMRA)
+- ~~Add LLM prompt enhancement.~~ Create workflow to use [LLM prompt enhancement](https://www.youtube.com/watch?v=4d5zIBNuMRA).
 
 ## Changelog
 | Date | Tag | Description |
 | --- | --- | --- |
-| ??? | v 1.2-dev | Cleaned up unused ports in Dockerfile. Changed checkpoint model to _flux1-dev-bnb-nf4-v2_. Added *ComfyUI_bitsandbytes_NF4* control node. |
+| ??? | v 1.2-dev | Cleaned up unused ports in Dockerfile. Changed checkpoint model to _flux1-dev-bnb-nf4-v2_. Added *ComfyUI_bitsandbytes_NF4* and *comfyui_LLM_party* control nodes. |
 | 2024.08.10 | v1.1 | Changed default workflow to ["flux_dev_checkpoint_example"](https://raw.githubusercontent.com/comfyanonymous/ComfyUI_examples/master/flux/flux_dev_checkpoint_example.png). Moved flux1-dev-fp8.safetensors from _unet_ to _checkpoints_. Replaced flux1-dev-fp8.safetensors with [model from Comfy-Org](https://huggingface.co/Comfy-Org/flux1-dev/blob/main/flux1-dev-fp8.safetensors). Added "To-do" section to README.md |
 | 2024.08.09 | v1 | Initial build with flux1-dev-fp8 model. |
